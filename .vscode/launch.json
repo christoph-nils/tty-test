@@ -1,0 +1,43 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "windows": {
+                "program": "${workspaceFolder}/build/project_name"
+            },
+            "linux": {
+                "program": "${workspaceFolder}/build/project_name"
+            },
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Ignore STD",
+                    "text": "skip -gfi C:/msys64/ucrt64/include/c++/*.h",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Ignore CPM Moduls",
+                    "text": "skip -gfi */.cache/CPM/*/include/*.hpp",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
